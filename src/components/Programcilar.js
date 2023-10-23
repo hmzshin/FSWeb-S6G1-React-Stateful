@@ -60,7 +60,7 @@ export default function Programcilar() {
               {dev.isim}{" "}
               <button
                 onClick={() => {
-                  /* burada dev.id 'yi öne çıkan id'ye atayın */
+                  oneCikaninIsmi; /* burada dev.id 'yi öne çıkan id'ye atayın */
                 }}
               >
                 Kutla
