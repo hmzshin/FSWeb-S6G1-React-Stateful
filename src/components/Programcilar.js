@@ -38,6 +38,12 @@ export default function Programcilar() {
     // Öne çıkan geliştiricinin _isim_ adını döndürmek için her iki state dilimini kullanacak.
     // Closureların güzelliği, argümanlar yoluyla bilgi enjekte etmeye gerek kalmadan programın
     // bu bölgesinden her iki state dilimini de "görebilmemiz"dir.
+
+    for (let i = 0; i < programcilar.length; i++) {
+      if (programcilar[i].id == programciId) {
+        return programcilar[i].isim;
+      }
+    }
   };
 
   const stil = {
@@ -60,7 +66,9 @@ export default function Programcilar() {
               {dev.isim}{" "}
               <button
                 onClick={() => {
-                  oneCikaninIsmi; /* burada dev.id 'yi öne çıkan id'ye atayın */
+                  setProgramciId(dev.id);
+
+                  /* burada dev.id 'yi öne çıkan id'ye atayın */
                 }}
               >
                 Kutla
@@ -74,7 +82,7 @@ export default function Programcilar() {
           // Üçlüler, bir şeyin "gerçekliğine" bağlı olarak "bir şeyi veya diğerini" ifade etmek için harikadır..
           // Sözde-kod: öne çıkan true ise metin 1'i oluşturun, aksi takdirde metin 2'yi oluşturun..
           // Sabit kodlanmış false'u doğru değişkenle değiştirin.
-          false
+          programciId != null
             ? `🎉 Hadi ${oneCikaninIsmi()}'ı kutlayalım! 🥳`
             : "Harika bir programcı seçin"
         }

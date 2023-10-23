@@ -29395,6 +29395,12 @@ function Programcilar() {
     // Öne çıkan geliştiricinin _isim_ adını döndürmek için her iki state dilimini kullanacak.
     // Closureların güzelliği, argümanlar yoluyla bilgi enjekte etmeye gerek kalmadan programın
     // bu bölgesinden her iki state dilimini de "görebilmemiz"dir.
+
+    for (var i = 0; i < programcilar.length; i++) {
+      if (programcilar[i].id == programciId) {
+        return programcilar[i].isim;
+      }
+    }
   };
   var stil = {
     fontSize: "1.5em",
@@ -29417,7 +29423,9 @@ function Programcilar() {
       key: dev.id
     }, dev.isim, " ", /*#__PURE__*/_react.default.createElement("button", {
       onClick: function onClick() {
-        oneCikaninIsmi; /* burada dev.id 'yi öne çıkan id'ye atayın */
+        setProgramciId(dev.id);
+
+        /* burada dev.id 'yi öne çıkan id'ye atayın */
       }
     }, "Kutla"));
   })), /*#__PURE__*/_react.default.createElement("div", {
@@ -29427,7 +29435,7 @@ function Programcilar() {
   // Üçlüler, bir şeyin "gerçekliğine" bağlı olarak "bir şeyi veya diğerini" ifade etmek için harikadır..
   // Sözde-kod: öne çıkan true ise metin 1'i oluşturun, aksi takdirde metin 2'yi oluşturun..
   // Sabit kodlanmış false'u doğru değişkenle değiştirin.
-  false ? "\uD83C\uDF89 Hadi ".concat(oneCikaninIsmi(), "'\u0131 kutlayal\u0131m! \uD83E\uDD73") : "Harika bir programcı seçin"));
+  programciId != null ? "\uD83C\uDF89 Hadi ".concat(oneCikaninIsmi(), "'\u0131 kutlayal\u0131m! \uD83E\uDD73") : "Harika bir programcı seçin"));
 }
 },{"react":"../node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -29469,7 +29477,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51997" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51827" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
